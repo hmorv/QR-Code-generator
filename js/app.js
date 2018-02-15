@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	'use strict';
 
+	//vars
 	var params = {
 		width : 300,
 		height : 300,
@@ -11,6 +12,7 @@ $(document).ready(function() {
 	var output = document.getElementById('qrcode');
 	var qrcode = new QRCode(output, params);
 	
+	//funcs
 	function makeCode () {
 		var text = document.getElementById('text').value;	
 		qrcode.makeCode(text);
@@ -18,11 +20,9 @@ $(document).ready(function() {
 
 	function remakeCode(output, params) {
 		output.innerHTML = '';
-		//var text = document.getElementById('text').value;
 		qrcode = null;
 		qrcode = new QRCode(output, params);
 		makeCode();
-		//qrcode.makeCode(text);
 	}
 
 	function checkColor(value) {
@@ -38,6 +38,7 @@ $(document).ready(function() {
 
 	makeCode();
 
+	//events
 	$("#text").on("keyup", function (e) {
 		makeCode(output, params);
 	});
