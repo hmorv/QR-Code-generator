@@ -1,10 +1,13 @@
 $(document).ready(function() {
 	'use strict';
 
+	//get qrcode div width
+	var qrcodeWidth = document.getElementById("qrcode").offsetWidth;
+
 	//vars
 	var params = {
-		width : 300,
-		height : 300,
+		width : qrcodeWidth,
+		height : qrcodeWidth,
 		colorDark : "#000000",
 		colorLight : "#ffffff",
 	};
